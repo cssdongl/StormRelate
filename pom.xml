@@ -20,7 +20,7 @@
         <org.slf4j.vresion>1.7.5</org.slf4j.vresion>
         <prod.dir>${profiles.dir}/prod</prod.dir>
         <test.skip>true</test.skip>
-        <jstorm.version>2.1.0</jstorm.version>
+        <jstorm.version>2.1.1</jstorm.version>
         <!--<storm.version>storm-0.9.2-incubating</storm.version>-->
         <!--<org.aspectj-version>1.7.5</org.aspectj-version>-->
 
