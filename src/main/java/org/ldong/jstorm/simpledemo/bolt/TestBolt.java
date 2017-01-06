@@ -1,10 +1,11 @@
-package org.ldong.jstorm.simpledemo;
+package org.ldong.jstorm.simpledemo.bolt;
 
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.base.BaseRichBolt;
 import backtype.storm.tuple.Tuple;
+import org.ldong.jstorm.simpledemo.CustomerLoggerFactory;
 import org.slf4j.Logger;
 
 import java.util.Map;

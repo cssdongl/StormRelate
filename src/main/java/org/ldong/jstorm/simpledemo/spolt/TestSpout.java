@@ -1,4 +1,4 @@
-package org.ldong.jstorm.simpledemo;
+package org.ldong.jstorm.simpledemo.spolt;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
