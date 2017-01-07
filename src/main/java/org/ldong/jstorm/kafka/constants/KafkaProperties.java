@@ -8,7 +8,7 @@ package org.ldong.jstorm.kafka.constants;
 public class KafkaProperties {
     public static final String ZK_CONNECT = "192.168.15.81:2181,192.168.15.82:2181,192.168.15.83:2181";
 
-    public static final String GROUP_ID = "stormGroup";
+    public static final String GROUP_ID = "stormGroup2";
 
     public static final String STROM_TOPIC = "storm_json";
 

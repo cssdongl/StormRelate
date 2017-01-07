@@ -195,6 +195,7 @@ public class HBaseDAOImp implements HBaseDAO {
         HBaseDAO dao = new HBaseDAOImp();
         List<Put> list = new ArrayList<Put>();
         Put put = new Put("aa".getBytes());
+        dao.insert("storm_hbase","aa","info","age","33");
         put.addColumn("info".getBytes(), "name".getBytes(), "zhangsan".getBytes());
         list.add(put);
         put.addColumn("info".getBytes(), "addr".getBytes(), "beijing".getBytes());

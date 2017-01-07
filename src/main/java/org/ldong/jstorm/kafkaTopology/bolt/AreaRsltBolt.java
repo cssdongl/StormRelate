@@ -42,6 +42,7 @@ public class AreaRsltBolt implements IBasicBolt {
 
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
+        dao.insert("storm_hbase","aa","info","age","33");
         String date_areaid = input.getString(0);
         double order_amt = input.getDouble(1) ;
         countsMap.put(date_areaid, order_amt) ;
