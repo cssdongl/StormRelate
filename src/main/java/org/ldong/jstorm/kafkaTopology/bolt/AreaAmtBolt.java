@@ -11,7 +11,7 @@ import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Result;
 import org.ldong.jstorm.hbase.HBaseDAO;
 import org.ldong.jstorm.hbase.HBaseDAOImp;
-import org.ldong.jstorm.kafka.DateFmt;
+import org.ldong.jstorm.kafka.DateFormat;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +50,7 @@ public class AreaAmtBolt implements IBasicBolt {
         countsMap = new HashMap<String, Double>() ;
         dao = new HBaseDAOImp() ;
         //根据hbase里初始值进行初始化countsMap
-        today = DateFmt.getCountDate(null, DateFmt.date_short);
+        today = DateFormat.getCountDate(null, DateFormat.date_short);
         countsMap = this.initMap(today, dao);
         for(String key:countsMap.keySet())
         {
@@ -94,7 +94,7 @@ public class AreaAmtBolt implements IBasicBolt {
     public Map<String, Double> initMap(String rowKeyDate, HBaseDAO dao)
     {
         Map <String,Double> countsMap = new HashMap<String, Double>() ;
-        List<Result> list = dao.getRows("area_order", rowKeyDate, new String[]{"order_amt"});
+        List<Result> list = dao.getRows("storm_hbase", rowKeyDate, new String[]{"order_amt"});
         for(Result rsResult : list)
         {
             String rowKey = new String(rsResult.getRow());

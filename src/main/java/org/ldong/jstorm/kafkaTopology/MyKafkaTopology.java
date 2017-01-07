@@ -18,11 +18,11 @@ import org.ldong.jstorm.kafkaTopology.spolt.OrderBaseSpout;
  * @version V1.0
  * @date 2017/1/7 14:02
  */
-public class KafkaTopology {
+public class MyKafkaTopology {
 
     public static void main(String[] args) {
         TopologyBuilder builder = new TopologyBuilder();
-        builder.setSpout("spout", new OrderBaseSpout(KafkaProperties.ORDER_TOPIC), 5);
+        builder.setSpout("spout", new OrderBaseSpout(KafkaProperties.STROM_TOPIC), 5);
         builder.setBolt("filterblot", new AreaFilterBolt() , 5).shuffleGrouping("spout") ;
         builder.setBolt("amtbolt", new AreaAmtBolt() , 2).fieldsGrouping("filterblot", new Fields("area_id")) ;
         builder.setBolt("rsltolt", new AreaRsltBolt(), 1).shuffleGrouping("amtbolt");
@@ -39,7 +39,6 @@ public class KafkaTopology {
                 e.printStackTrace();
             }
         }else {
-            //本地测试！！！！！！！！！！！！
             LocalCluster localCluster = new LocalCluster();
             localCluster.submitTopology("mytopology", conf, builder.createTopology());
         }

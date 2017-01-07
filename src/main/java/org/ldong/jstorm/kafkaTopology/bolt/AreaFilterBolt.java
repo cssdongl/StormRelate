@@ -7,7 +7,7 @@ import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-import org.ldong.jstorm.kafka.DateFmt;
+import org.ldong.jstorm.kafka.DateFormat;
 
 import java.util.Map;
 
@@ -27,13 +27,11 @@ public class AreaFilterBolt implements IBasicBolt{
 
     @Override
     public Map<String, Object> getComponentConfiguration() {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public void prepare(Map stormConf, TopologyContext context) {
-        // TODO Auto-generated method stub
 
     }
 
@@ -43,7 +41,7 @@ public class AreaFilterBolt implements IBasicBolt{
         if(order != null){
             String[] orderArr = order.split("\\t");
             // ared_id,order_amt,create_time
-            collector.emit(new Values(orderArr[3],orderArr[1], DateFmt.getCountDate(orderArr[2], DateFmt.date_short)));
+            collector.emit(new Values(orderArr[3],orderArr[1], DateFormat.getCountDate(orderArr[2], DateFormat.date_short)));
             System.out.println("--------------》"+orderArr[3]+orderArr[1]);
         }
 
@@ -51,7 +49,6 @@ public class AreaFilterBolt implements IBasicBolt{
 
     @Override
     public void cleanup() {
-        // TODO Auto-generated method stub
 
     }
 }

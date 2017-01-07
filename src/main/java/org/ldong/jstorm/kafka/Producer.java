@@ -35,10 +35,10 @@ public class Producer extends Thread {
         while (true) {
             i++;
             String messageStr = i + "\t" + order_amt[random.nextInt(5)] + "\t" +
-                    DateFmt.getCountDate(null, DateFmt.date_long) + "\t" + area_id[random.nextInt(5)];
+                    DateFormat.getCountDate(null, DateFormat.date_long) + "\t" + area_id[random.nextInt(5)];
             System.out.println("product:" + messageStr);
             producer.send(new KeyedMessage<Integer, String>(topic, messageStr));
-            Utils.sleep(1000) ;
+            Utils.sleep(500) ;
         }
     }
 

@@ -18,18 +18,21 @@ public class HBaseDAOImp implements HBaseDAO {
 
     private static Configuration conf;
     private static Connection conn = null;
-
-    public HBaseDAOImp() {
-        Configuration conf = new Configuration();
+    static {
+        conf = new Configuration();
         conf.set("hbase.zookeeper.quorum", "192.168.15.81,192.168.15.82,192.168.15.83");
         conf.set("hbase.rootdir", "hdfs://192.168.15.84:8020/hbase");
-
+//        conf = HBaseConfiguration.create();
         try {
             conn = ConnectionFactory.createConnection(conf);
         } catch (IOException e) {
             conn = null;
             e.printStackTrace();
         }
+    }
+
+    public HBaseDAOImp() {
+
     }
 
     @Override
@@ -57,7 +60,7 @@ public class HBaseDAOImp implements HBaseDAO {
         try {
             table = conn.getTable(TableName.valueOf(tableName));
             Put put = new Put(rowKey.getBytes());
-            put.add(family.getBytes(), quailifer.getBytes(), value.getBytes());
+            put.addColumn(family.getBytes(), quailifer.getBytes(), value.getBytes());
             table.put(put);
         } catch (Exception e) {
             e.printStackTrace();
@@ -192,15 +195,15 @@ public class HBaseDAOImp implements HBaseDAO {
         HBaseDAO dao = new HBaseDAOImp();
         List<Put> list = new ArrayList<Put>();
         Put put = new Put("aa".getBytes());
-        put.add("cf".getBytes(), "name".getBytes(), "zhangsan".getBytes());
+        put.addColumn("info".getBytes(), "name".getBytes(), "zhangsan".getBytes());
         list.add(put);
-        put.add("cf".getBytes(), "addr".getBytes(), "beijing".getBytes());
+        put.addColumn("info".getBytes(), "addr".getBytes(), "beijing".getBytes());
         list.add(put);
-        put.add("cf".getBytes(), "age".getBytes(), "30".getBytes());
+        put.addColumn("info".getBytes(), "age".getBytes(), "30".getBytes());
         list.add(put);
-        put.add("cf".getBytes(), "tel".getBytes(), "13567882341".getBytes());
+        put.addColumn("info".getBytes(), "tel".getBytes(), "13567882341".getBytes());
         list.add(put);
-        dao.save(list, "test");
+        dao.save(list, "storm_hbase");
 
     }
 
