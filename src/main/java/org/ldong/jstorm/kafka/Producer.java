@@ -38,7 +38,7 @@ public class Producer extends Thread {
                     DateFormat.getCountDate(null, DateFormat.date_long) + "\t" + area_id[random.nextInt(5)];
             System.out.println("product:" + messageStr);
             producer.send(new KeyedMessage<Integer, String>(topic, messageStr));
-            Utils.sleep(500) ;
+            Utils.sleep(5000) ;
         }
     }
 

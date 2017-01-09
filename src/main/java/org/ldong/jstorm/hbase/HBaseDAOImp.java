@@ -145,7 +145,7 @@ public class HBaseDAOImp implements HBaseDAO {
             PrefixFilter filter = new PrefixFilter(rowKeyLike.getBytes());
             Scan scan = new Scan();
             for (int i = 0; i < cols.length; i++) {
-                scan.addColumn("cf".getBytes(), cols[i].getBytes());
+                scan.addColumn("info".getBytes(), cols[i].getBytes());
             }
             scan.setFilter(filter);
             ResultScanner scanner = table.getScanner(scan);

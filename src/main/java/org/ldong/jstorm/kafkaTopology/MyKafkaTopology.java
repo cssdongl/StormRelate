@@ -22,8 +22,8 @@ public class MyKafkaTopology {
 
     public static void main(String[] args) {
         TopologyBuilder builder = new TopologyBuilder();
-        builder.setSpout("spout", new OrderBaseSpout(KafkaProperties.STROM_TOPIC), 5);
-        builder.setBolt("filterblot", new AreaFilterBolt() , 5).shuffleGrouping("spout") ;
+        builder.setSpout("spout", new OrderBaseSpout(KafkaProperties.STROM_TOPIC), 1);
+        builder.setBolt("filterblot", new AreaFilterBolt() , 2).shuffleGrouping("spout") ;
         builder.setBolt("amtbolt", new AreaAmtBolt() , 2).fieldsGrouping("filterblot", new Fields("area_id")) ;
         builder.setBolt("rsltolt", new AreaRsltBolt(), 1).shuffleGrouping("amtbolt");
 
