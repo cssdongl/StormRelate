@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafkaTopology.bolt;
+package org.ldong.jstorm.kafkaTopology.nativeway.bolt;
 
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.BasicOutputCollector;
@@ -7,7 +7,7 @@ import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-import org.ldong.jstorm.kafka.DateFormat;
+import org.ldong.jstorm.kafka.simpletopic.DateFormat;
 
 import java.util.Map;
 

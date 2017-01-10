@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafkaTopology.spolt;
+package org.ldong.jstorm.kafkaTopology.nativeway.spolt;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
@@ -6,7 +6,7 @@ import backtype.storm.topology.IRichSpout;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
-import org.ldong.jstorm.kafka.OrderConsumer;
+import org.ldong.jstorm.kafka.simpletopic.OrderConsumer;
 
 import java.util.Map;
 import java.util.Queue;

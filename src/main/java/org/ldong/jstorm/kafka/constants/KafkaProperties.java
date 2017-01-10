@@ -12,5 +12,4 @@ public class KafkaProperties {
 
     public static final String STROM_TOPIC = "storm_json";
 
-    public static final String ORDER_TOPIC = "order_topic";
 }

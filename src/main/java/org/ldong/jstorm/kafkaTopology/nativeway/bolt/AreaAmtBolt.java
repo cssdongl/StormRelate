@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafkaTopology.bolt;
+package org.ldong.jstorm.kafkaTopology.nativeway.bolt;
 
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.BasicOutputCollector;
@@ -11,7 +11,7 @@ import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Result;
 import org.ldong.jstorm.hbase.HBaseDAO;
 import org.ldong.jstorm.hbase.HBaseDAOImp;
-import org.ldong.jstorm.kafka.DateFormat;
+import org.ldong.jstorm.kafka.simpletopic.DateFormat;
 
 import java.util.HashMap;
 import java.util.List;

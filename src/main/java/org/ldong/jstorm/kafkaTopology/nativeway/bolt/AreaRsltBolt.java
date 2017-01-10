@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafkaTopology.bolt;
+package org.ldong.jstorm.kafkaTopology.nativeway.bolt;
 
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.BasicOutputCollector;

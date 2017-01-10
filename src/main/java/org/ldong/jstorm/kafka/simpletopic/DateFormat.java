@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafka;
+package org.ldong.jstorm.kafka.simpletopic;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

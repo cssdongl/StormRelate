@@ -1,4 +1,4 @@
-package org.ldong.jstorm.kafkaTopology;
+package org.ldong.jstorm.kafkaTopology.nativeway;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -8,10 +8,10 @@ import backtype.storm.generated.InvalidTopologyException;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.tuple.Fields;
 import org.ldong.jstorm.kafka.constants.KafkaProperties;
-import org.ldong.jstorm.kafkaTopology.bolt.AreaAmtBolt;
-import org.ldong.jstorm.kafkaTopology.bolt.AreaFilterBolt;
-import org.ldong.jstorm.kafkaTopology.bolt.AreaRsltBolt;
-import org.ldong.jstorm.kafkaTopology.spolt.OrderBaseSpout;
+import org.ldong.jstorm.kafkaTopology.nativeway.bolt.AreaAmtBolt;
+import org.ldong.jstorm.kafkaTopology.nativeway.bolt.AreaFilterBolt;
+import org.ldong.jstorm.kafkaTopology.nativeway.bolt.AreaRsltBolt;
+import org.ldong.jstorm.kafkaTopology.nativeway.spolt.OrderBaseSpout;
 
 /**
  * @author cssdongl@gmail.com
